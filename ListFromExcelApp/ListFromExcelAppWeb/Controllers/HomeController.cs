@@ -14,8 +14,7 @@ namespace ListFromExcelAppWeb.Controllers
 {
     public class HomeController : Controller
     {
-        SharePointContext spContext;
-        
+         
 
         [SharePointContextFilter]
         public ActionResult Index()
@@ -34,7 +33,7 @@ namespace ListFromExcelAppWeb.Controllers
             
             User spUser = null;
 
-            spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext);
+            SharePointContext spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext);
 
             using (var clientContext = spContext.CreateUserClientContextForSPHost())
             {
