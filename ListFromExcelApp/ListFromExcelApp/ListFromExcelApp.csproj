@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD62D2DC-5CB0-42EC-8BC1-F0C3F9ECD90B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ListFromExcelApp</RootNamespace>
+    <AssemblyName>ListFromExcelApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <ProjectMode>SharePointApp</ProjectMode>
+    <AppFeaturePartId>{bec6bfcd-35c3-4b9a-b6f7-420c1362b616}</AppFeaturePartId>
+    <WspPartId>{5c646610-c52a-4cce-b48b-1613abbf1fad}</WspPartId>
+    <WorkflowPartId>{ca058090-e4a4-4710-b0c9-58b3fda666b7}</WorkflowPartId>
+    <CspkgPartId>{1cd4da9f-4876-478d-8d99-8c6be219cd0c}</CspkgPartId>
+    <SqlPackagePartId>{6e9eb4f7-2ce8-426e-8bca-6295ca76ebae}</SqlPackagePartId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.png">
+      <OpcRelationship>manifest-icon</OpcRelationship>
+    </Content>
+    <Content Include="Elements.xml" />
+    <Content Include="External Content Types\Elements.xml" />
+    <Content Include="External Content Types\Northwind\Employees\Elements.xml" />
+    <Content Include="Features\Feature_UploadedFilesLibrary\Feature_UploadedFilesLibrary.Template.xml">
+      <DependentUpon>Feature_UploadedFilesLibrary.feature</DependentUpon>
+    </Content>
+    <Content Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </Content>
+    <Content Include="SE_Customers\Elements.xml" />
+    <Content Include="SE_Customers\Schema.xml" />
+    <Content Include="SE_Customers\SE_CustomersInstance\Elements.xml" />
+    <Content Include="UploadedFiles\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppManifestFile Include="AppManifest.xml">
+      <SubType>Designer</SubType>
+    </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ListFromExcelAppWeb\ListFromExcelAppWeb.csproj">
+      <Project>{AC6046B7-1443-4856-B748-CEAAC4DA8F01}</Project>
+      <Name>ListFromExcelAppWeb</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>ListFromExcelAppWeb</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="External Content Types\Northwind\Employees.ect" />
+    <None Include="External Content Types\Northwind\Employees\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{47656507-c91f-4196-a072-8f2618eaac71}</SharePointProjectItemId>
+    </None>
+    <None Include="External Content Types\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9ce12620-511a-4e61-bb1d-aa87b0c0510c}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature_UploadedFilesLibrary\Feature_UploadedFilesLibrary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <FeatureId>{5b836678-13ec-4c59-92d0-22e8124ddf1d}</FeatureId>
+      <LastGenOutput>Feature_UploadedFilesLibrary.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{6fe2b590-3f09-4fd4-8114-20f961eecd3d}</PackageId>
+    </None>
+    <None Include="SE_Customers\SE_CustomersInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cdbbf236-bedc-4450-977e-5ad67655df9c}</SharePointProjectItemId>
+    </None>
+    <None Include="SE_Customers\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ecbc9fa4-26c1-475a-9e46-0c86d92c39c2}</SharePointProjectItemId>
+    </None>
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8a0d8438-9b32-433b-a0c2-d1fbdf332dce}</SharePointProjectItemId>
+    </None>
+    <None Include="UploadedFiles\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b0d00a4f-865a-49e4-8dee-af717080eaa6}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Feature_UploadedFilesLibrary\Feature_UploadedFilesLibrary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Feature_UploadedFilesLibrary.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

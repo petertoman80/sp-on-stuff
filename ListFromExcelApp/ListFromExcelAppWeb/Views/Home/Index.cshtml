@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Styles.Render("~/Content/jquery.fileupload")
+@Scripts.Render("~/bundles/jquery.fileupload")
+
+<div class="jumbotron">
+    <h2>Welcome @ViewBag.UserName!</h2>
+    <p class="lead"><b>Apps for SharePoint - </b>Embracing web standards, the new cloud app model gives you maximum choice and flexibility to build a new class of apps for SharePoint using familiar languages, tools, and hosting services.</p>
+    <p><a href="http://dev.office.com" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Upload File:</h2>
+        <span class="btn btn-success fileinput-button">
+            <i class="glyphicon glyphicon-plus"></i>
+            <span>Select files...</span>
+            <!-- The file input field used as target for the file upload widget -->
+            <input id="fileupload" type="file" name="files[]" multiple="">
+        </span>
+        <br>
+        <br>
+        <div id="progress" class="progress">
+            <div class="progress-bar progress-bar-success"></div>
+        </div>
+        <br>
+        <div id="files" class="files"></div>
+        
+        <input id="btnCreateList" name="btnCreateList" class="btn btn-primary" type="button" value="Create List" />
+
+        <button id="btnShowLists" name="btnShowLists"  type="button" class="btn btn-primary start">
+            <i class="glyphicon glyphicon-upload"></i>
+            <span>Show list items</span>
+        </button>
+
+        <div id="listItems" class="listItems"></div>
+        <div id="displayDiv" class="displayDiv"></div>
+
+        
+    </div>
+</div>
+<script src="~/Scripts/main.js"></script>
